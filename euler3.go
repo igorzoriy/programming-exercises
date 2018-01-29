@@ -9,12 +9,13 @@ func isPrime(n int) bool {
 	if n < 4 {
 		return false
 	}
-	max := int(math.Ceil(float64(n / 2)))
-	for i := 2; i <= max; i++ {
+
+	for i := 2; i <= n/2; i++ {
 		if n%i == 0 {
 			return false
 		}
 	}
+
 	return true
 }
 
@@ -26,7 +27,7 @@ func main() {
 		if n%factor == 0 && isPrime(factor) {
 			break
 		}
-		factor -= 1
+		factor--
 	}
 
 	fmt.Println(factor)
