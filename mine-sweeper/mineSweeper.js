@@ -1,4 +1,5 @@
 var fs = require('fs')
+var path = require('path')
 
 function calcMines (file) {
     var board = fs.readFileSync(file).toString().split('\n')
@@ -45,4 +46,4 @@ function calcMines (file) {
     return board.map(item => item.join(' ')).join('\n')
 }
 
-console.log(calcMines('./mine-sweeper.txt'))
+console.log(calcMines(path.join(__dirname, './mine-sweeper.txt')))
