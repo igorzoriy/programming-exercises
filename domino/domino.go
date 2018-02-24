@@ -1,4 +1,4 @@
-package main
+package domino
 
 import (
 	"fmt"
@@ -6,10 +6,12 @@ import (
 )
 
 func domino(str string) int {
-	dominos := strings.Split(str, ",")
-	if len(dominos) == 0 {
+	if len(str) == 0 {
 		return 0
-	} else if len(dominos) == 1 {
+	}
+
+	dominos := strings.Split(str, ",")
+	if len(dominos) == 1 {
 		return 1
 	}
 
@@ -35,6 +37,7 @@ func domino(str string) int {
 }
 
 func main() {
+	fmt.Println(domino(""))
 	fmt.Println(domino("1-1"))
 	fmt.Println(domino("1-2,1-2"))
 	fmt.Println(domino("3-2,2-1,1-4,4-4,5-4,4-2,2-1"))
