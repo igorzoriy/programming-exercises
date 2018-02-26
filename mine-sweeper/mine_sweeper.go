@@ -79,17 +79,28 @@ func calculateMines(area [][]string) {
 	}
 }
 
-func main() {
-	file, err := os.Open("./mine-sweeper.txt")
-	defer file.Close()
+func printMinesFromFile(file string) {
+	fd, err := os.Open(file)
+	defer fd.Close()
 	if err != nil {
 		panic(err)
 	}
 
-	area := makeArea(file)
+	area := makeArea(fd)
 	calculateMines(area)
+	printArea(area)
+}
 
+func printArea(area [][]string) {
 	for _, line := range area {
 		fmt.Println(line)
 	}
+	fmt.Println("====================================")
+}
+
+func main() {
+	printMinesFromFile("./mines1.txt")
+	printMinesFromFile("./mines2.txt")
+	printMinesFromFile("./mines3.txt")
+	printMinesFromFile("./mines4.txt")
 }

@@ -46,4 +46,11 @@ function calcMines (file) {
     return board.map(item => item.join(' ')).join('\n')
 }
 
-console.log(calcMines(path.join(__dirname, './mine-sweeper.txt')))
+console.log(calcMines(path.join(__dirname, './mines1.txt')))
+console.log('================================================')
+console.log(calcMines(path.join(__dirname, './mines2.txt')))
+console.log('================================================')
+console.log(calcMines(path.join(__dirname, './mines3.txt')))
+console.log('================================================')
+console.log(calcMines(path.join(__dirname, './mines4.txt')))
+console.log('================================================')
