@@ -10,6 +10,7 @@
     "typescript": "^3.0.3"
   },
   "scripts": {
-    "trees:run": "ts-node trees/index.ts"
+    "trees:run": "ts-node trees/index.ts",
+    "ip-validation:run": "ts-node ip-validation/index.ts"
   }
 }
